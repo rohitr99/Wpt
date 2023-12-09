@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+function f1(){
+    let x= parseInt(document.getElementById("i1").value)
+    let select=(document.getElementById("s1").value)
+    let result
+    console.log(x)
+    switch(select){
+        case "month":  
+        const month=["jan","feb","march","april","may","june","july","aug","sep","oct","nov","dec"]
+        for(let i=0;i<month.length;i++){
+           if(x==i+1){
+              result=month[i] 
+              break  
+         }
+    
+        
+    }
+    break
+    case "weekDay" :
+        const week=["sun","mon","tue","wed","thu","fri","sat"]
+        for(let j=0;j<week.length;j++){
+            if(x==j){
+                result=week[j]
+                break
+            }
+        }
+    break
+    
+       
+    }
+    console.log(result)
+    document.getElementById("p1").innerHTML=result
+
+}
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    Enter the number:
+    <input type="number"  id="i1">
+    <select id="s1" onchange="f1()">
+        <option >select</option>
+        <option>month</option>
+        <option>weekDay</option>
+    </select>
+    <br>
+    <p >the result is:<span id="p1"></span></p>
+</body>
+</html>
