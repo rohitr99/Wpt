@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Timer</title>
+    <script>
+        let cnt, intervalid
+        function start() {
+            cnt = 0
+            intervalid = setInterval(() => {
+                ++cnt
+                document.getElementById('timer').innerHTML = `<p>${cnt}</p>`
+            }, 1000)
+
+        }
+        function stop() {
+            clearInterval(intervalid)
+        }
+
+        function reset() {
+            cnt = 0
+            clearInterval(intervalid)
+            document.getElementByid('timer').innerHTML = ''
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <h2 style="text-align: center; border:1psx solid black">Timer</h2>
+        <p id="timer"></p>
+        <input type="button" id="start" value="start" onclick="start()">
+        <input type="button" id="stop" value="stop" onclick="stop()">
+        <input type="button" id="res" value="reset" onclick="reset()">
+    </div>
+</body>
+
+</html>
